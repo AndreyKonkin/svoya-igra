@@ -17,8 +17,8 @@ export default function MyAppbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <ExtensionIcon sx={{ color: 'black', mr: 1 }} />
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1, color: 'black' }}>
+          <ExtensionIcon sx={{ mr: 1 }} />
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             СВОЯ ИГРА
           </Typography>
 

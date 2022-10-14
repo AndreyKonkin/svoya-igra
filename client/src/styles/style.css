@@ -4,3 +4,10 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+body {
+    background: url('../../public/nasa-Q1p7bh3SHj8-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow-y: hidden;
+}

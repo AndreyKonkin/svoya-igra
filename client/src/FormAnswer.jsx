@@ -39,7 +39,9 @@ export default function FormAnswer({ modal }) {
             type="text"
             value={modal}
             fullWidth
-            disabled
+            InputProps={{
+              readOnly: true,
+            }}
           />
           <TextField
             variant="standard"

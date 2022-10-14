@@ -1,8 +1,8 @@
+import HttpsIcon from '@mui/icons-material/Https';
 import {
-  Avatar, Button, Grid, Paper, TextField,
+  Avatar, Button, Grid, Paper, TextField
 } from '@mui/material';
 import React, { useContext } from 'react';
-import HttpsIcon from '@mui/icons-material/Https';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './Context/UserContext';
 

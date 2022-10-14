@@ -8,7 +8,7 @@ const gameSlice = createSlice({
   reducers: {
     getAnswer(state, action) {
       return [...state, {
-        id: action.payload.id,
+        prise: action.payload.prise,
         answer: action.payload.answer,
       }];
     },

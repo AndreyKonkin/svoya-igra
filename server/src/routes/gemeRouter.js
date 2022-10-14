@@ -1,11 +1,11 @@
 const express = require('express');
-const { Cafe } = require('../db/models');
+const { Theme, Question } = require('../../db/models');
 
 const router = express.Router();
 
 router.route('/')
   .post(async (req, res) => {
-    const allCafe = await Cafe.findAll();
+    const allCafe = await Theme.findAll({ include: Question });
     res.json(allCafe);
   });
 

@@ -3,6 +3,9 @@ import {
   Grid, Paper, styled, Typography,
 } from '@mui/material';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import ModalComponent from './ModalComponent';
+import { setModal } from './redux/slices/modalSlice';
 
 export default function MainPage() {
   const Item = styled(Paper)(({ theme }) => ({
@@ -11,12 +14,17 @@ export default function MainPage() {
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
+  const dispatch = useDispatch();
+  const modalHandler = (el) => {
+    dispatch(setModal(el));
+  };
 
   return (
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
-      {Array.from(Array(30)).map((_, index) => (
+      {Array.from(Array(30)).map((el, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: '15vh' }} key={index}>
+        // <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: '15vh' }} key={index}>
+        <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: '60%' }} key={index}>
           {(index === 0 || index % 6 === 0) ? (
             <Item sx={{
               height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#4EBCFF',
@@ -28,6 +36,7 @@ export default function MainPage() {
             : (
               <Button
                 variant="contained"
+                onClick={() => dispatch(modalHandler('200'))}
                 sx={{
                   height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%',
                 }}
@@ -37,6 +46,7 @@ export default function MainPage() {
             )}
         </Grid>
       ))}
+      <ModalComponent />
     </Grid>
   );
 }

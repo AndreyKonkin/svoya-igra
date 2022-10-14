@@ -1,6 +1,7 @@
-import { Box, Modal, Typography } from '@mui/material';
+import { Box, Modal } from '@mui/material';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import FormAnswer from './FormAnswer';
 import { setModal } from './redux/slices/modalSlice';
 
 const style = {
@@ -28,12 +29,13 @@ export default function ModalComponent() {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
+        {/* <Typography id="modal-modal-title" variant="h6" component="h2">
           question
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           Напишите ваш ответ
-        </Typography>
+        </Typography> */}
+        <FormAnswer modal={modal} />
       </Box>
     </Modal>
   );

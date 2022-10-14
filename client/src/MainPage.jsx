@@ -1,52 +1,23 @@
-import {
-  Button,
-  Grid, Paper, styled, Typography,
-} from '@mui/material';
+import { Grid } from '@mui/material';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ModalComponent from './ModalComponent';
-import { setModal } from './redux/slices/modalSlice';
+import Cards from './Cards';
 
 export default function MainPage() {
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
-  const dispatch = useDispatch();
-  const modalHandler = (el) => {
-    dispatch(setModal(el));
-  };
+  const user = useSelector((state) => state.user);
 
   return (
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
-      {Array.from(Array(30)).map((el, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        // <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: '15vh' }} key={index}>
-        <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: '60%' }} key={index}>
-          {(index === 0 || index % 6 === 0) ? (
-            <Item sx={{
-              height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#4EBCFF',
-            }}
-            >
-              <Typography sx={{ color: 'white' }}><h1>x</h1></Typography>
-            </Item>
-          )
-            : (
-              <Button
-                variant="contained"
-                onClick={() => dispatch(modalHandler('200'))}
-                sx={{
-                  height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%',
-                }}
-              >
-                <Typography><h1>x</h1></Typography>
-              </Button>
-            )}
-        </Grid>
-      ))}
-      <ModalComponent />
+      {user?.id ? (
+        <>
+          <Cards />
+          <ModalComponent />
+          <Grid xs={12}>
+            <div className="score"><h2>Ваш счёт:</h2></div>
+          </Grid>
+        </>
+      ) : <div>x</div>}
     </Grid>
   );
 }

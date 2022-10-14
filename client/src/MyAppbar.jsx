@@ -11,7 +11,7 @@ export default function MyAppbar() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const links = ['main', 'login', 'signup'];
+  const links = user?.id ? ['main'] : ['login', 'signup'];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -34,7 +34,7 @@ export default function MyAppbar() {
 
           {user?.id && (
           <Button variant="text" color="inherit" onClick={() => dispatch(logoutUser())}>
-            Выйти
+            Logout
           </Button>
           )}
         </Toolbar>

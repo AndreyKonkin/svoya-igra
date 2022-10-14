@@ -16,7 +16,7 @@ export default function MainPage() {
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
       {Array.from(Array(30)).map((_, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: 130 }} key={index}>
+        <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: '15vh' }} key={index}>
           {(index === 0 || index % 6 === 0) ? (
             <Item sx={{
               height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#4EBCFF',

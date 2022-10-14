@@ -17,5 +17,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    'import/no-unresolved': 0,
   },
 };

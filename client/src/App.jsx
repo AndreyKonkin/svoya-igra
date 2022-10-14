@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <MyAppbar />
-      <Container maxWidth="lg" className="overlay" sx={{ height: '100vh', pt: '2%' }}>
+      <Container maxWidth="lg" className="overlay" sx={{ pt: '2%' }}>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />

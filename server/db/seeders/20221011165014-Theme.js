@@ -2,19 +2,19 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Themes', [{
-      title: 'Вопросы для тупых',
+      title: 'Потупим',
     },
     {
-      title: 'Вопросы тупых',
+      title: 'Кино',
     },
     {
-      title: 'Вопросы для т',
+      title: 'Нестандарт',
     },
     {
-      title: 'Восы для тупых',
+      title: 'Что слушаешь?',
     },
     {
-      title: 'Вопро дя тух',
+      title: 'Полосатые',
     },
     ], {});
   },

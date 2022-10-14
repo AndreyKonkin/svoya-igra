@@ -11,10 +11,8 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({
-  credentials: true,
-  origin: true,
-}));
+
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,6 +27,14 @@ app.use(session({
     httpOnly: true,
   },
 }));
+app.use(cors({
+  credentials: true,
+  origin: true,
+}));
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
+  next();
+});
 
 app.use('/api/user', userRouter);
 app.use('/api/game', gameRouter);

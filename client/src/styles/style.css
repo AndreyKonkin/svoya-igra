@@ -11,3 +11,11 @@ body {
     height: 100vh;
     overflow-y: hidden;
 }
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+    margin-top: 10px;
+}

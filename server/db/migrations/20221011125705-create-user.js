@@ -1,23 +1,21 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Caves', {
+    await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      cafeName: {
+      name: {
         type: Sequelize.STRING,
       },
-      url: {
+      email: {
         type: Sequelize.STRING,
+        unique: true,
       },
-      rating: {
-        type: Sequelize.INTEGER,
-      },
-      description: {
+      hashpass: {
         type: Sequelize.TEXT,
       },
       createdAt: {
@@ -33,6 +31,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Caves');
+    await queryInterface.dropTable('Users');
   },
 };

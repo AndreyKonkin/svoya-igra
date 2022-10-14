@@ -17,7 +17,5 @@ module.exports = {
     'react',
   ],
   rules: {
-    'react/prop-types': 0,
-    'react/jsx-no-constructed-context-values': 0,
   },
 };

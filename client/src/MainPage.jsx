@@ -1,23 +1,22 @@
 import {
-  Button,
   Grid, Paper, styled, Typography,
 } from '@mui/material';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import ItemButton from './ItemButton';
 import ModalComponent from './ModalComponent';
-import { setModal } from './redux/slices/modalSlice';
 
 export default function MainPage() {
+  // const check = useSelector((state) => state.check);
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   }));
-  const dispatch = useDispatch();
-  const modalHandler = (el) => {
-    dispatch(setModal(el));
-  };
+  // const dispatch = useDispatch();
+  // const modalHandler = (el) => {
+  //   dispatch(setModal(el));
+  // };
 
   return (
     <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -33,15 +32,17 @@ export default function MainPage() {
             </Item>
           )
             : (
-              <Button
-                variant="contained"
-                onClick={() => dispatch(modalHandler('200'))}
-                sx={{
-                  height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%',
-                }}
-              >
-                <Typography><h1>x</h1></Typography>
-              </Button>
+              // <Button
+              //   variant="contained"
+              //   onClick={() => dispatch(modalHandler('200'))}
+              //   sx={{
+              //     height: 100, display: 'flex', alignItems: 'center',
+              // justifyContent: 'center', width: '100%',
+              //   }}
+              // >
+              //   <Typography><h1>x</h1></Typography>
+              // </Button
+              <ItemButton />
             )}
         </Grid>
       ))}

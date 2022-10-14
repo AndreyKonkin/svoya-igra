@@ -1,16 +1,15 @@
-import React from 'react';
 import {
-  Button,
   Grid, Paper, styled, Typography,
 } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { setModal } from './redux/slices/modalSlice';
+import React from 'react';
+import ItemButton from './ItemButton';
+// import { setModal } from './redux/slices/modalSlice';
 
 export default function Cards() {
-  const dispatch = useDispatch();
-  const modalHandler = (el) => {
-    dispatch(setModal(el));
-  };
+  // const dispatch = useDispatch();
+  // const modalHandler = (el) => {
+  //   dispatch(setModal(el));
+  // };
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -32,15 +31,17 @@ export default function Cards() {
           </Item>
         )
           : (
-            <Button
-              variant="contained"
-              onClick={() => dispatch(modalHandler('200'))}
-              sx={{
-                height: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%',
-              }}
-            >
-              <Typography><h1>x</h1></Typography>
-            </Button>
+            // <Button
+            //   variant="contained"
+            //   onClick={() => dispatch(modalHandler('200'))}
+            //   sx={{
+            // height: 100, display: 'flex', alignItems: 'center',
+            //  justifyContent: 'center', width: '100%',
+            //   }}
+            // >
+            //   <Typography><h1>x</h1></Typography>
+            // </Button>
+            <ItemButton />
           )}
       </Grid>
     ))

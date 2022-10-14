@@ -18,5 +18,7 @@ module.exports = {
   ],
   rules: {
     'import/no-unresolved': 0,
+    'no-console': 0,
+    'react/prop-types': 0,
   },
 };

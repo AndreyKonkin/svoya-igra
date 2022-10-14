@@ -1,13 +1,14 @@
+import HttpsIcon from '@mui/icons-material/Https';
 import {
   Avatar, Button, Grid, Paper, TextField,
 } from '@mui/material';
-import React, { useContext } from 'react';
-import HttpsIcon from '@mui/icons-material/Https';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from './Context/UserContext';
+import { loginUser } from './redux/slices/userSlice';
 
 export default function LoginPage() {
-  const { loginHandler } = useContext(UserContext);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const paperStyle = {
     padding: 20, height: '280px', width: 350, margin: '20px auto',
@@ -19,10 +20,11 @@ export default function LoginPage() {
 
   const buttonStyle = {
     marginTop: '20px',
+    backgroundColor: '#0064ff',
   };
 
   return (
-    <form onSubmit={(e) => { loginHandler(e, Object.fromEntries(new FormData(e.target))); navigate('/'); }}>
+    <form onSubmit={(e) => { dispatch(loginUser(e, Object.fromEntries(new FormData(e.target)))); navigate('/'); }}>
       <Grid>
         <Paper elevation={10} style={paperStyle}>
           <Grid align="center">

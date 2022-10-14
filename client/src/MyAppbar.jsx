@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   AppBar, Box, Button, Toolbar, Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ExtensionIcon from '@mui/icons-material/Extension';
-import { UserContext } from './Context/UserContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutUser } from './redux/slices/userSlice';
 
-export default function ButtonAppBar() {
-  const { user, logoutHandler } = useContext(UserContext);
-  const links = ['main', 'login', 'signup'];
+export default function MyAppbar() {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const links = ['main', 'login', 'signup'];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -21,7 +23,7 @@ export default function ButtonAppBar() {
           </Typography>
 
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            {user.name ? `Добро пожаловать, ${user.name}` : 'Не авторизованы'}
+            {user?.name ? `Добро пожаловать, ${user.name}` : 'Не авторизованы'}
           </Typography>
 
           {links.map((link) => (
@@ -30,8 +32,8 @@ export default function ButtonAppBar() {
             </Button>
           ))}
 
-          {user.id && (
-          <Button variant="text" color="inherit" onClick={logoutHandler}>
+          {user?.id && (
+          <Button variant="text" color="inherit" onClick={() => dispatch(logoutUser())}>
             Выйти
           </Button>
           )}

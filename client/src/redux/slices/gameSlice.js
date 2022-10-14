@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = [];
 
@@ -15,5 +16,5 @@ const gameSlice = createSlice({
   },
 });
 
-export const { getAnswer } = gameSlice.actions;
+export const { getAnswer, findStatus } = gameSlice.actions;
 export default gameSlice.reducer;

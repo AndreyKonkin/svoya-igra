@@ -1,12 +1,20 @@
 import { Container } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import LoginPage from './LoginPage';
 import MainPage from './MainPage';
 import MyAppbar from './MyAppbar';
+import { checkUser } from './redux/slices/userSlice';
 import SignUpPage from './SignUpPage';
 
 function App() {
+  // const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUser());
+  }, []);
   return (
     <>
       <MyAppbar />

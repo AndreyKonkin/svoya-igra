@@ -5,6 +5,7 @@ import {
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { getAnswer } from './redux/slices/gameSlice';
+import { checkAnswerAsync } from './redux/slices/checkSlise';
 
 const avatarStyle = {
   backgroundColor: '#0064ff',
@@ -19,20 +20,21 @@ export default function FormAnswer({ modal }) {
   const submitHandler = (e, inputs) => {
     e.preventDefault();
     dispatch(getAnswer(inputs));
+    dispatch(checkAnswerAsync(modal.id, inputs));
   };
   return (
     <form onSubmit={(e) => submitHandler(e, Object.fromEntries(new FormData(e.target)))}>
       <Grid>
         <Grid align="center">
           <Avatar style={avatarStyle}><QuestionAnswer /></Avatar>
-          <h2>Game</h2>
+          <h2>{modal.questions}</h2>
         </Grid>
         <TextField
           variant="standard"
           label="Баллы"
           name="prise"
           type="text"
-          value={modal}
+          value={modal.prise}
           fullWidth
           InputProps={{
             readOnly: true,

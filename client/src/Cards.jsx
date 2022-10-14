@@ -28,7 +28,7 @@ export default function Cards() {
   return (
     <>
       {state.map((el) => (
-        <Grid xs={2} sm={2} md={2} sx={{ p: 0.5, height: 130 }} key={el.id}>
+        <Grid xs={2} sm={2} md={2} sx={{ p: 1, height: 130, marginRight: 'auto' }} key={el.id}>
           <Item sx={{
             height: 100,
             display: 'flex',

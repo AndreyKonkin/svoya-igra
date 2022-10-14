@@ -20,7 +20,7 @@ export default function ItemButton({ q }) {
       {isClick ? (
         <Button
           // variant="contained"
-          style={{ backgroundColor: check[q.id] ? 'green' : 'red' }}
+          style={{ backgroundColor: check[q.id] ? 'green' : 'red', marginTop: '10px' }}
           disabled
           onClick={() => dispatch(modalHandler(q))}
           sx={{
@@ -31,6 +31,7 @@ export default function ItemButton({ q }) {
         </Button>
       ) : (
         <Button
+          style={{ marginTop: '10px' }}
           variant="contained"
           onClick={() => dispatch(modalHandler(q))}
           sx={{

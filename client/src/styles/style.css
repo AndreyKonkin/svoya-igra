@@ -6,8 +6,16 @@
 }
 
 body {
-    background: url('../../public/1653663653_12-celes-club-p-fon-dlya-igri-kosmos-krasivie-12.jpeg') no-repeat center center fixed;
+    background: url('../../public/gradienta.jpeg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     overflow-y: hidden;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+    margin-top: 10px;
 }

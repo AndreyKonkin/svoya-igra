@@ -1,26 +1,27 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
-  class Cafe extends Model {
+  class Question extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate(models) {
+    static associate({ Theme }) {
       // define association here
+      this.belongsTo(Theme, { foreignKey: 'themeid' });
     }
   }
-  Cafe.init({
-    cafeName: DataTypes.STRING,
-    url: DataTypes.STRING,
-    rating: DataTypes.INTEGER,
-    description: DataTypes.TEXT
+  Question.init({
+    questions: DataTypes.STRING,
+    answer: DataTypes.STRING,
+    prise: DataTypes.INTEGER,
+    themeid: DataTypes.INTEGER,
   }, {
     sequelize,
-    modelName: 'Cafe',
+    modelName: 'Question',
   });
-  return Cafe;
+  return Question;
 };

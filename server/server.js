@@ -4,17 +4,15 @@ const cors = require('cors');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const userRouter = require('./src/routes/userRouter');
-const cafeRouter = require('./src/routes/cafeRouter');
+const gameRouter = require('./src/routes/gemeRouter');
 
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({
-  credentials: true,
-  origin: true,
-}));
+
+
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,8 +27,16 @@ app.use(session({
     httpOnly: true,
   },
 }));
+app.use(cors({
+  credentials: true,
+  origin: true,
+}));
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
+  next();
+});
 
 app.use('/api/user', userRouter);
-app.use('/api/cafes', cafeRouter);
+app.use('/api/game', gameRouter);
 
 app.listen(PORT, () => console.log(`Server has started on PORT ${PORT}`));

@@ -1,13 +1,14 @@
 import {
   Avatar, Button, Grid, Paper, TextField,
 } from '@mui/material';
-import React, { useContext } from 'react';
+import React from 'react';
 import HttpsIcon from '@mui/icons-material/Https';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from './Context/UserContext';
+import { signupUser } from './redux/slices/userSlice';
 
 export default function SignUpPage() {
-  const { signupHandler } = useContext(UserContext);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const paperStyle = {
     padding: 20, height: '320px', width: 350, margin: '20px auto',
@@ -19,9 +20,10 @@ export default function SignUpPage() {
 
   const buttonStyle = {
     marginTop: '20px',
+    backgroundColor: '0064ff',
   };
   return (
-    <form onSubmit={(e) => { signupHandler(e, Object.fromEntries(new FormData(e.target))); navigate('/'); }}>
+    <form onSubmit={(e) => { dispatch(signupUser(e, Object.fromEntries(new FormData(e.target)))); navigate('/'); }}>
       <Grid>
         <Paper elevation={10} style={paperStyle}>
           <Grid align="center">

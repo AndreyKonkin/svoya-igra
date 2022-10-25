@@ -1,31 +1,28 @@
 import { Container } from '@mui/material';
-import React, { useContext } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import AdminPage from './AdminPage';
-import { UserContext } from './Context/UserContext';
-import ProtectedRoute from './HOCs/ProtectedRoute';
-import InfoPage from './InfoPage';
 import LoginPage from './LoginPage';
 import MainPage from './MainPage';
 import MyAppbar from './MyAppbar';
-import NoPage from './NoPage';
+import { checkUser } from './redux/slices/userSlice';
 import SignUpPage from './SignUpPage';
 
 function App() {
-  const { user } = useContext(UserContext);
+  // const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUser());
+  }, []);
   return (
     <>
       <MyAppbar />
-      <Container maxWidth="lg" className="overlay" sx={{ height: '100vh' }}>
+      <Container maxWidth="lg" className="overlay" sx={{ pt: '2%' }}>
         <Routes>
-          <Route element={<ProtectedRoute isAllowed={!!user.id} />}>
-            <Route path="/main" element={<MainPage />} />
-            <Route path="/info" element={<InfoPage />} />
-          </Route>
-          <Route path="/admin" element={<ProtectedRoute isAllowed={!!user.id && user.name === 'admin'}><AdminPage /></ProtectedRoute>} />
+          <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
-          <Route path="*" element={<NoPage />} />
         </Routes>
       </Container>
     </>

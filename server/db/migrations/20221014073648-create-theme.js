@@ -1,24 +1,15 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Caves', {
+    await queryInterface.createTable('Themes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      cafeName: {
+      title: {
         type: Sequelize.STRING,
-      },
-      url: {
-        type: Sequelize.STRING,
-      },
-      rating: {
-        type: Sequelize.INTEGER,
-      },
-      description: {
-        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,
@@ -33,6 +24,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Caves');
+    await queryInterface.dropTable('Themes');
   },
 };

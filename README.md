@@ -7,6 +7,10 @@
 
 ![Описание](http(s)://github.com/AndrejKonkin/svoya-igra/main/image2.png)
 
+[![N|Solid](https://raw.githubusercontent.com/Vsaveload/NeuroNode/main/Preview.png)](https://raw.githubusercontent.com/Vsaveload/NeuroNode/main/Preview.png)
+
+[![N|Solid](https://raw.githubusercontent.com/AndrejKonkin/svoya-igra/main/image2.png)](https://raw.githubusercontent.com/AndrejKonkin/svoya-igra/main/image2.png)
+
 Алгоритмы сравнивают ваш ответ с правильным и добавляют вам очки
 
 Installation

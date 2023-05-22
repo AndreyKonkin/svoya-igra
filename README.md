@@ -3,15 +3,9 @@
 
 ![Иллюстрация к проекту](https://github.com/andreykonkin/svoya-igra/raw/main/image1.png)
 
-![Иллюстрация к проекту](https://github.com/AndreyKonkin/svoya-igra/raw/main/image2.png)
-
-![Описание](http(s)://github.com/AndreyKonkin/svoya-igra/main/image2.png)
-
-[![N|Solid](https://raw.githubusercontent.com/Vsaveload/NeuroNode/main/Preview.png)](https://raw.githubusercontent.com/Vsaveload/NeuroNode/main/Preview.png)
-
-[![N|Solid](https://raw.githubusercontent.com/AndreyKonkin/svoya-igra/main/image2.png)](https://raw.githubusercontent.com/AndreyKonkin/svoya-igra/main/image2.png)
-
 Алгоритмы сравнивают ваш ответ с правильным и добавляют вам очки
+
+![Иллюстрация к проекту](https://github.com/AndreyKonkin/svoya-igra/raw/main/image2.png)
 
 Installation
 Установка

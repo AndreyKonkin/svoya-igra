@@ -1,6 +1,8 @@
 # svoya-igra
 Регистрируемся в игре и можем начинать
 
+![Иллюстрация к проекту](https://github.com/andrejkonkin/svoya-igra/raw/main/client/public/image1.png)
+
 ![Иллюстрация к проекту](https://github.com/andrejkonkin/svoya-igra/raw/main/image/image1.png)
 
 Алгоритмы сравнивают ваш ответ с правильным и добавляют вам очки

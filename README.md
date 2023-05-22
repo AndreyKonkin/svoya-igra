@@ -1,11 +1,11 @@
 # svoya-igra
 Регистрируемся в игре и можем начинать
 
-/Users/andrejkonkin/Desktop/Elbrus/Phase 3/svoya-igra/client/public/Снимок экрана 1.png
+![Иллюстрация к проекту](https://github.com/andrejkonkin/Desktop/Elbrus/Phase 3/svoya-igra/client/public/Снимок экрана 1.png
 
 Алгоритмы сравнивают ваш ответ с правильным и добавляют вам очки
 
-/Users/andrejkonkin/Desktop/Elbrus/Phase 3/svoya-igra/client/public/Снимок экрана 2.png
+![Иллюстрация к проекту](https://github.com/andrejkonkin/Desktop/Elbrus/Phase 3/svoya-igra/client/public/Снимок экрана 2.png
 
 Installation
 Установка

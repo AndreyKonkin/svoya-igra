@@ -16,7 +16,7 @@ Installation
 подробнее ниже
 
 
-npm i;
+npm i<br>
 rename file envExample to .env;
 create data base and fill the env file with your data;
 npx sequelize-cli db:migrate;

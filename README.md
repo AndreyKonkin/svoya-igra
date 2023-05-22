@@ -16,12 +16,12 @@ Installation
 подробнее ниже
 
 
-npm i<br>
-rename file envExample to .env;
-create data base and fill the env file with your data;
-npx sequelize-cli db:migrate;
-npx sequelize-cli db:seed:all;
-cd client;
-npm start
-cd server
+npm i <br>
+rename file envExample to .env <br>
+create data base and fill the env file with your data <br>
+npx sequelize-cli db:migrate <br>
+npx sequelize-cli db:seed:all <br>
+cd client <br>
+npm start <br>
+cd server <br>
 npm start

@@ -4,7 +4,8 @@
 ![Иллюстрация к проекту](https://github.com/andrejkonkin/svoya-igra/raw/main/image1.png)
 
 ![Иллюстрация к проекту](https://github.com/andrejkonkin/svoya-igra/raw/main/image2.png)
-[Описание](http(s)://image2.png)
+[Описание](http(s)://github.com/andrejkonkin/svoya-igra/image2.png)
+
 Алгоритмы сравнивают ваш ответ с правильным и добавляют вам очки
 
 Installation
